@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="thank-you-container">
+        <h1>Thank you!</h1>
+        <p>You selected <span id="selected-rating"></span> out of 5</p>
+        <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const rating = urlParams.get('rating');
+        document.getElementById('selected-rating').textContent = rating ? rating : 'No rating selected';
+    </script>
+</body>
+</html>
